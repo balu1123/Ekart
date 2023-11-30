@@ -24,7 +24,7 @@ pipeline {
                 sh "mvn clean package -DskipTests=true"
             }
         }
-
+//
         stage("OWASP Scan"){
             steps {
                 dependencyCheck additionalArguments: '--scan ./ ', odcInstallation: 'DP'
