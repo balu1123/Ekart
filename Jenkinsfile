@@ -25,6 +25,12 @@ pipeline {
             }
         }
 
+        stage("OWASP"){
+          steps{
+            dependencyCheck additionalArguments: '', odcInstallation: 'DP'
+            dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+          }  
+        }
         
     }
 }       
