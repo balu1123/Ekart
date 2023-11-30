@@ -28,7 +28,7 @@ pipeline {
 
         stage("Sonarqube"){
             steps {
-                withSonarQubeEnv('sonar-server'){
+                withSonarQubeEnv('sonar-scanner'){
                    sh ''' $SCANNER_HOME/bin/sonar
                    -Dsonar.projectName=ekart \
                    -Dsonar.java.binaries=. \
