@@ -7,19 +7,19 @@ pipeline {
     
     
     stages {
-        stage("Git Checkout") {
+        stage("Git Checkout"){
             steps {
                 git branch: 'main', changelog: false, poll: false, url: 'https://github.com/balu1123/Ekart.git'
             }
         }
 
-        stage("COMPILE") {
+        stage("COMPILE"){
             steps {
                 sh "mvn clean compile -DskipTests=true"
             }
         }
 
-        stage("OWASP Scan") {
+        stage("OWASP Scan"){
             steps {
                 dependencyCheck additionalArguments: '--scan ./ ', odcInstallation: 'DP'
                 dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
