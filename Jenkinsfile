@@ -19,11 +19,22 @@ pipeline {
             }
         }
 
-        stage('OWASP Scan') {
+        stage("OWASP Scan"){
             steps {
                 dependencyCheck additionalArguments: '--scan ./ ', odcInstallation: 'DP'
                 dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
             }
         }
+
+        stage("Sonarqube"){
+            steps {
+                withSonarQubeEnv('sonar-server'){
+                   sh ''' $SCANNER_HOME/bin/sonar
+                   -Dsonar.projectName=ekart \
+                   -Dsonar.java.binaries=. \
+                   -Dsonar.projectKey=ekart '''
+                }
+            }
+        }                   
     }
 }       
