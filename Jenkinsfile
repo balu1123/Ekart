@@ -50,18 +50,18 @@ pipeline {
             script{
                nexusArtifactUploader artifacts: 
                [
-                 [artifactId: 'shopping-cart', 
+                 [artifactId: 'spring-boot-starter-parent', 
                   classifier: '',
                   file: '', 
                   type: 'jar']
                   ], 
                   credentialsId: 'nexus-cred', 
-                  groupId: 'com.reljicd', 
+                  groupId: 'org.springframework.boot', 
                   nexusUrl: '54.80.110.73:8081', 
                   nexusVersion: 'nexus3', 
                   protocol: 'http', 
                   repository: 'ekart-release', 
-                  version: '0.0.1' 
+                  version: '1.5.3.RELEASE' 
             }
           }  
         }
