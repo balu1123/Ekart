@@ -1,14 +1,14 @@
 pipeline {
     agent any
     tools{
-        jdk  'jdk11'
+        jdk  'jdk17'
         maven  'maven'
     }
     
     environment{
         SCANNER_HOME= tool 'sonar-scanner'
     }
-    
+
     stages {
         stage("Git Checkout"){
             steps {
