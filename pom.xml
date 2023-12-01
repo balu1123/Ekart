@@ -150,13 +150,13 @@
 
          <distributionManagement>
     <repository>
-      <id>maven-releases</id>
-      <name>maven-releases</name>
+      <id>ekart-release</id>
+      <name>ekart-release</name>
       <url>http://54.80.110.73:8081/repository/ekart-release/</url>
     </repository>
     <snapshotRepository>
-      <id>maven-snapshots</id>
-      <name>maven-snapshots</name>
+      <id>ekart-SNAPSHOT</id>
+      <name>ekart-SNAPSHOT</name>
       <url>http://54.80.110.73:8081/repository/ekart-SNAPSHOT/</url>
     </snapshotRepository>
 </distributionManagement>
