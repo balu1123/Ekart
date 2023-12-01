@@ -47,22 +47,11 @@ pipeline {
 
         stage("Nexus"){
           steps{
-            script{
-               nexusArtifactUploader artifacts: 
-               [
-                 [artifactId: 'spring-boot-starter-parent', 
-                  classifier: '',
-                  file: '', 
-                  type: 'jar']
-                  ], 
-                  credentialsId: 'nexus-cred', 
-                  groupId: 'org.springframework.boot', 
-                  nexusUrl: '54.80.110.73:8081', 
-                  nexusVersion: 'nexus3', 
-                  protocol: 'http', 
-                  repository: 'ekart-release', 
-                  version: '1.5.3.RELEASE' 
-            }
+            withMaven(globalMavenSettingsConfig: 'global-settings-xml') {
+     
+            sh 'mvn deploy -DskipTests=true'   
+              }
+            
           }  
         }
     }
