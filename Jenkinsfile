@@ -52,7 +52,7 @@ pipeline {
                [
                  [artifactId: 'shopping-cart', 
                   classifier: '',
-                  file: 'target/Uber.jar', 
+                  file: '', 
                   type: 'jar']
                   ], 
                   credentialsId: 'nexus-cred', 
