@@ -35,7 +35,7 @@ pipeline {
           }  
         }
         
-        stage('Sonarqube') {
+        stage("Sonarqube") {
             steps {
                 withSonarQubeEnv('sonar-scanner'){
                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=EKART \
@@ -43,6 +43,27 @@ pipeline {
                    -Dsonar.projectKey=EKART '''
                }
             }
+        }
+
+        stage("Nexus"){
+          steps{
+            script{
+               nexusArtifactUploader artifacts: 
+               [
+                 [artifactId: 'shopping-cart', 
+                  classifier: '',
+                  file: 'target/Uber.jar', 
+                  type: 'jar']
+                  ], 
+                  credentialsId: 'nexus-cred', 
+                  groupId: 'com.reljicd', 
+                  nexusUrl: '54.80.110.73:8081', 
+                  nexusVersion: 'nexus3', 
+                  protocol: 'http', 
+                  repository: 'ekart-release', 
+                  version: '0.0.1-SNAPSHOT' 
+            }
+          }  
         }
     }
 }       
