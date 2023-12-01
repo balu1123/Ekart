@@ -35,9 +35,9 @@ pipeline {
         stage('Sonarqube') {
             steps {
                 withSonarQubeEnv('sonar-scanner'){
-                   sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=ekart \
+                   sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=EKART \
                    -Dsonar.java.binaries=. \
-                   -Dsonar.projectKey=ekart '''
+                   -Dsonar.projectKey=EKART '''
                }
             }
         }
