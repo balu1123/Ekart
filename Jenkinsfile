@@ -45,7 +45,7 @@ pipeline {
             }
         }
 
-        /*stage("Nexus"){
+        stage("Nexus"){
           steps{
             withMaven(globalMavenSettingsConfig: 'global-settings-xml') {
      
@@ -53,6 +53,6 @@ pipeline {
               }
             
           }  
-        }*/
+        }
     }
 }       
