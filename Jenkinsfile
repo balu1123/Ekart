@@ -44,6 +44,14 @@ pipeline {
                }
             }
         }
+
+        stage("Nexus"){
+          steps{
+            withMaven(globalMavenSettingsConfig: 'Global-settings.xml') {
+            sh "mvn deploy -DskipTests=true" 
+            }
+          }  
+        }
         
     }
 }       
