@@ -55,16 +55,6 @@ pipeline {
           }  
         }
 
-        stage("Build & Tag Docker"){
-           steps{
-             script{
-                withDockerRegistry(credentialsId: 'Docker-cred') {
-                sh 'sudo chmod 666 /var/run/docker.sock'    
-                sh 'docker image build -t shopping-cart:dev -f bbaludevops/shopping-cart:dev .'  
-                sh 'docker image tag shopping-cart:dev bbaludevops/shopping-cart:dev' 
-                }
-             }
-           } 
-        }
+        
     }
 }       
