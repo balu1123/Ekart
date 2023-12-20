@@ -59,6 +59,7 @@ pipeline {
            steps{
              script{
                 withDockerRegistry(credentialsId: 'Docker-cred') {
+                sh 'sudo chmod 666 /var/run/docker.sock'    
                 sh "docker build -t shopping-cart:dev -f docker/Dockerfile ."  
                 sh "docker tag shopping-cart:dev bbaludevops/shopping-cart:dev" 
                 }
