@@ -152,12 +152,12 @@
     <repository>
       <id>ekart-release</id>
       <name>ekart-release</name>
-      <url>http://34.230.68.17:8081/repository/ekart-release/</url>
+      <url>http://3.85.75.223:8081/repository/ekart-release/</url>
     </repository>
     <snapshotRepository>
       <id>ekart-SNAPSHOT</id>
       <name>ekart-SNAPSHOT</name>
-      <url>http://34.230.68.17:8081/repository/ekart-SNAPSHOT/</url>
+      <url>http://3.85.75.223:8081/repository/ekart-SNAPSHOT/</url>
     </snapshotRepository>
 </distributionManagement>
 
