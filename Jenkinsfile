@@ -50,7 +50,7 @@ pipeline {
             withMaven(globalMavenSettingsConfig: 'Global-settings.xml') {
      
             sh 'mvn deploy -DskipTests=true'   
-              }
+            }
             
           }  
         }
@@ -60,8 +60,8 @@ pipeline {
              script{
                 withDockerRegistry(credentialsId: 'Docker-cred') {
                 sh 'sudo chmod 666 /var/run/docker.sock'    
-                sh "docker image build -t shopping-cart:dev -f bbaludevops/shopping-cart:dev ."  
-                sh "docker image tag shopping-cart:dev bbaludevops/shopping-cart:dev" 
+                sh 'docker image build -t shopping-cart:dev -f bbaludevops/shopping-cart:dev .'  
+                sh 'docker image tag shopping-cart:dev bbaludevops/shopping-cart:dev' 
                 }
              }
            } 
