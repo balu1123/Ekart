@@ -57,10 +57,12 @@ pipeline {
 
         stage("Build & Tag Docker"){
            steps{
-            withDockerRegistry(credentialsId: 'Docker-cred') {
+             script{
+                withDockerRegistry(credentialsId: 'Docker-cred') {
                 sh "docker build -t shopping-cart:dev -f docker/Dockerfile ."  
                 sh "docker tag shopping-cart:dev bbaludevops/shopping-cart:dev" 
-              }
+                }
+             }
            } 
         }
     }
