@@ -150,14 +150,14 @@
 
 <distributionManagement>
     <repository>
-      <id>ekart-release</id>
-      <name>ekart-release</name>
-      <url>http://54.82.221.113:8081/repository/ekart-release/</url>
+      <id>balu-release</id>
+      <name>balu-release</name>
+      <url>http://54.82.221.113:8081/repository/balu-release/</url>
     </repository>
     <snapshotRepository>
-      <id>ekart-SNAPSHOT</id>
-      <name>ekart-SNAPSHOT</name>
-      <url>http://54.82.221.113:8081/repository/ekart-SNAPSHOT/</url>
+      <id>balu-SNAPSHOT</id>
+      <name>balu-SNAPSHOT</name>
+      <url>http://54.82.221.113:8081/repository/balu-SNAPSHOT/</url>
     </snapshotRepository>
 </distributionManagement>
 
