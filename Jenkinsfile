@@ -59,7 +59,7 @@ pipeline {
                  nexusVersion: 'nexus3', 
                  protocol: 'http', 
                  repository: 'ekart-SNAPSHOT', 
-                 version: '1.0.2-SNAPSHOT'
+                 version: '2.0.0'
             withMaven(globalMavenSettingsConfig: 'global-settings.xml') {
             sh "mvn clean deploy -DskipTests=true" 
             }
