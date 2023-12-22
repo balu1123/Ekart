@@ -48,7 +48,7 @@ pipeline {
         stage("Nexus"){
           steps{
             withMaven(globalMavenSettingsConfig: 'global-settings.xml') {
-            sh "mvn deploy -DskipTests=true" 
+            sh "mvn clean deploy -DskipTests=true" 
             }
           }  
         }
