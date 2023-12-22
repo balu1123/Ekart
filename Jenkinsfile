@@ -50,7 +50,7 @@ pipeline {
             nexusArtifactUploader artifacts: [
                 [artifactId: 'shopping-cart',
                  classifier: '', 
-                 file: 'shopping-cart.jar', 
+                 file: 'shopping-cart-1.0.2-SNAPSHOT.jar', 
                  type: 'jar']
                  ], 
                  credentialsId: 'nexus-cred', 
