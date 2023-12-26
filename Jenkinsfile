@@ -46,22 +46,9 @@ pipeline {
         }
 
         stage("Nexus"){
-          steps{
-            nexusArtifactUploader artifacts: [
-                [artifactId: 'shopping-cart',
-                 classifier: '', 
-                 file: '', 
-                 type: 'jar']
-                 ], 
-                 credentialsId: 'nexus-cred', 
-                 groupId: 'com.reljicd', 
-                 nexusUrl: '35.153.80.183:8081', 
-                 nexusVersion: 'nexus3', 
-                 protocol: 'http', 
-                 repository: 'ekart-release', 
-                 version: '2.0.0'
-            
-          }  
+          withMaven(globalMavenSettingsConfig: 'global-settings-xml') {
+            sh "mvn clean deploy -DskipTests=true" 
+            }
         }
         
     }
