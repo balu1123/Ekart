@@ -55,7 +55,7 @@ pipeline {
                  ], 
                  credentialsId: 'nexus-cred', 
                  groupId: 'com.reljicd', 
-                 nexusUrl: '54.162.221.203:8081', 
+                 nexusUrl: '35.153.80.183:8081', 
                  nexusVersion: 'nexus3', 
                  protocol: 'http', 
                  repository: 'ekart-release', 
