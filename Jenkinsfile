@@ -60,9 +60,7 @@ pipeline {
                  protocol: 'http', 
                  repository: 'ekart-release', 
                  version: '2.0.0'
-            withMaven(globalMavenSettingsConfig: 'global-settings-xml') {
-            sh "mvn clean deploy -DskipTests=true" 
-            }
+            
           }  
         }
         
